@@ -20,22 +20,5 @@ export default defineConfig([
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
 
-  {
-    files: ['**/*.astro'],
-    plugins: {
-      astro,
-    },
-    languageOptions: {
-      parser: 'astro-eslint-parser',
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    extends: ['plugin:astro/recommended'],
-  },
+  ...astro.configs.recommended,
 ]);
